@@ -19,76 +19,76 @@ const theme = createTheme({
           },
         },
         {
-            props: {
-              variant: "body3",
-            },
-            style: {
-              fontSize: 9,
-            },
+          props: {
+            variant: "body3",
           },
+          style: {
+            fontSize: 9,
+          },
+        },
       ],
     },
   },
 });
 
-const TourCard = ({tour}) => {
+const TourCard = ({ tour }) => {
   return (
     <Grid item xs={3}>
-        <ThemeProvider theme={theme} >
-      <Paper elevation="3">
-        <img
-          src={tour.image}
-          alt=""
-          className="img"
-        />
-        <Box paddingX={1}>
-          <Typography variant="subtitle1" component="h2">
-            {tour.name}
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <AccessTime
+      <ThemeProvider theme={theme}>
+        <Paper elevation="3">
+          <img src={tour.image} alt="" className="img" />
+          <Box paddingX={1}>
+            <Typography variant="subtitle1" component="h2">
+              {tour.name}
+            </Typography>
+            <Box
               sx={{
-                width: 12.5,
+                display: "flex",
+                alignItems: "center",
               }}
-            />
-            <Typography variant="body2" component="paragraph" marginLeft={0.5}>
-              {tour.duration}
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-            }}
-            marginTop={3}
-          >
-            <Rating
-              name="read-only"
-              value={tour.rating}
-              precision="0.5"
-              readOnly
-              size="small"
-            />
-            <Typography variant="body2" component="p" marginLeft={0.5}>
-              {tour.rating}
-            </Typography>
+            >
+              <AccessTime
+                sx={{
+                  width: 12.5,
+                }}
+              />
+              <Typography
+                variant="body2"
+                component="paragraph"
+                marginLeft={0.5}
+              >
+                {tour.duration} hours ago
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+              marginTop={3}
+            >
+              <Rating
+                name="read-only"
+                value={tour.rating}
+                precision="0.5"
+                readOnly
+                size="small"
+              />
+              <Typography variant="body2" component="p" marginLeft={0.5}>
+                {tour.rating}
+              </Typography>
 
-            <Typography variant="body3" component="p" marginLeft={1.5}>
-              ({tour.numberOfReviews} reviews)
-            </Typography>
+              <Typography variant="body3" component="p" marginLeft={1.5}>
+                ({tour.numberOfReviews} reviews)
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="h6" component="h3" marginTop={0}>
+                From US ${tour.price}
+              </Typography>
+            </Box>
           </Box>
-          <Box>
-            <Typography variant="h6" component="h3" marginTop={0}>
-              From US ${tour.price}
-            </Typography>
-          </Box>
-        </Box>
-      </Paper>
+        </Paper>
       </ThemeProvider>
     </Grid>
   );

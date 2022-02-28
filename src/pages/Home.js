@@ -1,13 +1,12 @@
 import TourCard from "../components/TourCard";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import SearchAppBar from "../components/AppBar";
 import countries from "../data.json";
 import { Typography } from "@mui/material";
 
 const Home = () => (
   <div className="App">
-    <SearchAppBar />
+    
     <Container
       sx={{
         marginY: 5,
