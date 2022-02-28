@@ -31,19 +31,19 @@ const theme = createTheme({
   },
 });
 
-const TourCard = () => {
+const TourCard = ({tour}) => {
   return (
     <Grid item xs={3}>
         <ThemeProvider theme={theme} >
       <Paper elevation="3">
         <img
-          src="https://cdn.pixabay.com/photo/2021/08/04/14/16/tower-6521842_1280.jpg"
+          src={tour.image}
           alt=""
           className="img"
         />
         <Box paddingX={1}>
           <Typography variant="subtitle1" component="h2">
-            Tower the Eiffel
+            {tour.name}
           </Typography>
           <Box
             sx={{
@@ -57,7 +57,7 @@ const TourCard = () => {
               }}
             />
             <Typography variant="body2" component="paragraph" marginLeft={0.5}>
-              5 hours
+              {tour.duration}
             </Typography>
           </Box>
           <Box
@@ -69,22 +69,22 @@ const TourCard = () => {
           >
             <Rating
               name="read-only"
-              value={4.5}
+              value={tour.rating}
               precision="0.5"
               readOnly
               size="small"
             />
             <Typography variant="body2" component="p" marginLeft={0.5}>
-              4.5
+              {tour.rating}
             </Typography>
 
             <Typography variant="body3" component="p" marginLeft={1.5}>
-              (456 reviews )
+              ({tour.numberOfReviews} reviews)
             </Typography>
           </Box>
           <Box>
             <Typography variant="h6" component="h3" marginTop={0}>
-              From US $100
+              From US ${tour.price}
             </Typography>
           </Box>
         </Box>

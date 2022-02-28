@@ -14,6 +14,7 @@ function App() {
         marginY:5
       }}>
         {countries.map((country)=>(
+          <>
 <Typography 
   variant ="h4"
   component="h2"
@@ -23,15 +24,18 @@ function App() {
   Top Tour Destinations in {country.name}
 
 </Typography>
+<Grid container spacing={3}>
+  {country.tours.map((tour, index)=>(
+     <TourCard tour={tour} key={index} />
+  ))}
+         
+          
+        </Grid>
 
+</>
 
         ))}
-        {/* <Grid container spacing={3}>
-          <TourCard />
-          <TourCard />
-          <TourCard />
-          <TourCard />
-        </Grid> */}
+        
       </Container>
     </div>
   );
