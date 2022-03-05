@@ -3,6 +3,8 @@ import Typography from '@mui/material/Typography'
 import Box  from "@mui/material/Box";
 import ImageCollage from "../components/ImageCollage";
 import  Faqs from "../components/Faqs"
+import Paper from "@mui/material/Paper"
+import BottomNavigation from "@mui/material/BottomNavigation";
 
 
 const Tour =()=> <Container sx={{
@@ -44,9 +46,14 @@ const Tour =()=> <Container sx={{
         FAQs
     </Typography>
     </Box>
-    <Box>
+    <Box marginBottom ="10">
         <Faqs/>
     </Box>
+    <Paper sx={{position: 'fixed', bottom:0, left: 0, right:0} }elevation ={3}>
+    <BottomNavigation>
+
+    </BottomNavigation>
+    </Paper>
 
 </Box>
 
