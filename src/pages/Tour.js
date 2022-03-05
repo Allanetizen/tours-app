@@ -5,6 +5,7 @@ import ImageCollage from "../components/ImageCollage";
 import  Faqs from "../components/Faqs"
 import Paper from "@mui/material/Paper"
 import BottomNavigation from "@mui/material/BottomNavigation";
+import Modal  from "../components/Modal";
 
 
 const Tour =()=> <Container sx={{
@@ -51,7 +52,7 @@ const Tour =()=> <Container sx={{
     </Box>
     <Paper sx={{position: 'fixed', bottom:0, left: 0, right:0} }elevation ={3}>
     <BottomNavigation>
-
+<Modal/>
     </BottomNavigation>
     </Paper>
 
